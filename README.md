@@ -15,16 +15,29 @@ High-quality document processing CLI for RAG pipelines. Process PDFs, Office doc
 
 ### Installation
 
+#### Using pip
+
 ```bash
 pip install ingest-cli
 ```
 
-Or install from source:
+#### Using uv (recommended - faster!)
+
+```bash
+uv pip install ingest-cli
+```
+
+#### Install from source
 
 ```bash
 git clone https://github.com/therealtimex/ingest.git
 cd ingest
+
+# With pip
 pip install -e .
+
+# Or with uv
+uv pip install -e .
 ```
 
 ### Basic Usage
