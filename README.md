@@ -4,12 +4,12 @@ High-quality document processing CLI for RAG pipelines. Process PDFs, Office doc
 
 ## Features
 
-✅ **Standalone CLI Command** - Simple `ingest` command
-✅ **4 Output Formats** - markdown, json, html, chunks (RAG-optimized)
-✅ **3 Converters** - pdf, table, ocr specialized processing
-✅ **LLM Enhancement** - Optional AI boost (81% → 91% table accuracy)
-✅ **Multi-Worker** - Parallel batch processing
-✅ **20+ Options** - Full control over processing
+✅ **Standalone CLI Command** - Simple `ingest` command  
+✅ **4 Output Formats** - markdown, json, html, chunks (RAG-optimized)  
+✅ **3 Converters** - pdf, table, ocr specialized processing  
+✅ **LLM Enhancement** - Optional AI boost (81% → 91% table accuracy)  
+✅ **Multi-Worker** - Parallel batch processing  
+✅ **20+ Options** - Full control over processing  
 
 ## Quick Start
 
