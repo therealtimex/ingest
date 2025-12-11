@@ -46,6 +46,9 @@ docs/
 tasks/
 .claude/
 
+# But don't ignore GitHub workflows
+!.github/
+
 # Output directories
 processed/
 test_output/
