@@ -36,7 +36,6 @@ classifiers = [
 ]
 
 dependencies = [
-    "marker-pdf[full]>=0.2.0",
     "loguru>=0.7.0",
     "tqdm>=4.65.0",
     "pypdf>=3.0.0",
@@ -46,7 +45,16 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+marker = [
+    "marker-pdf[full]>=0.2.0",
+]
 llm = [
+    "google-generativeai",
+    "anthropic",
+    "openai",
+]
+full = [
+    "marker-pdf[full]>=0.2.0",
     "google-generativeai",
     "anthropic",
     "openai",
