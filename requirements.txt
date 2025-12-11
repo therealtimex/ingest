@@ -1,0 +1,24 @@
+# Marker Document Processor Requirements
+# Updated for marker-pdf with full feature support
+
+# Core dependencies
+marker-pdf>=1.10.1       # Latest version with converters API
+loguru>=0.7.0            # Logging
+tqdm>=4.65.0             # Progress bars
+
+# Fallback dependencies (for basic processing when marker is not available)
+pypdf>=3.0.0             # Basic PDF processing
+python-docx>=1.0.0       # DOCX processing
+openpyxl>=3.1.0          # XLSX processing
+Pillow>=10.0.0           # Image handling
+
+# Optional LLM service dependencies (install as needed)
+# google-generativeai>=0.3.0  # For Gemini LLM service
+# anthropic>=0.7.0            # For Claude LLM service
+# openai>=1.0.0               # For OpenAI LLM service
+
+# Note: marker-pdf[full] includes:
+# - PyMuPDF (fmupdf) for document processing
+# - surya for OCR and layout detection
+# - texify for equation formatting
+# - Support for PDF, PPTX, DOCX, XLSX, HTML, EPUB, images, and more
