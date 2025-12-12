@@ -801,6 +801,15 @@ Examples:
 
   # Process with forced OCR and debug mode
   %(prog)s file.pdf --force-ocr --debug --output-format markdown
+
+  # High-quality math conversion with LLM
+  %(prog)s math_paper.pdf --use-llm --redo-inline-math --gemini-api-key YOUR_KEY
+
+  # Use custom processors
+  %(prog)s doc.pdf --processors "custom.processor1,custom.processor2"
+
+  # Load config from JSON file
+  %(prog)s doc.pdf --config-json ./my_config.json
         """
     )
 
@@ -847,6 +856,14 @@ Examples:
                        help="Remove existing OCR text and re-OCR")
     parser.add_argument("--paginate-output", action="store_true",
                        help="Add page breaks to output")
+    parser.add_argument("--redo-inline-math", action="store_true",
+                       help="Use highest quality inline math conversion (requires --use-llm)")
+    parser.add_argument("--block-correction-prompt", type=str,
+                       help="Custom prompt for LLM to correct output (requires --use-llm)")
+    parser.add_argument("--processors", type=str,
+                       help="Override default processors (comma-separated module paths)")
+    parser.add_argument("--config-json", type=str,
+                       help="Path to JSON configuration file with additional settings")
 
     # Document cleaning
     parser.add_argument("--no-clean", action="store_true",
@@ -863,6 +880,18 @@ Examples:
             marker_config["strip_existing_ocr"] = True
         if args.paginate_output:
             marker_config["paginate_output"] = True
+        if args.redo_inline_math:
+            marker_config["redo_inline_math"] = True
+        if args.block_correction_prompt:
+            marker_config["block_correction_prompt"] = args.block_correction_prompt
+        if args.processors:
+            marker_config["processors"] = args.processors
+        if args.config_json:
+            # Load JSON config file
+            import json
+            with open(args.config_json, 'r') as f:
+                json_config = json.load(f)
+                marker_config.update(json_config)
         if args.gemini_api_key:
             marker_config["gemini_api_key"] = args.gemini_api_key
         if args.claude_api_key:
