@@ -22,14 +22,16 @@ High-quality document processing CLI for RAG pipelines. Process PDFs, Office doc
 uv pip install ingest-cli
 
 # With marker-pdf for high-quality processing
-uv pip install ingest-cli[marker]
+uv pip install "ingest-cli[marker]"
 
 # With LLM support
-uv pip install ingest-cli[llm]
+uv pip install "ingest-cli[llm]"
 
 # Full installation (everything)
-uv pip install ingest-cli[full]
+uv pip install "ingest-cli[full]"
 ```
+
+> **Note for zsh users**: Use quotes around the package name when installing with extras: `"ingest-cli[marker]"`
 
 #### Using pip
 
@@ -38,10 +40,10 @@ uv pip install ingest-cli[full]
 pip install ingest-cli
 
 # With marker-pdf
-pip install ingest-cli[marker]
+pip install "ingest-cli[marker]"
 
 # Full installation
-pip install ingest-cli[full]
+pip install "ingest-cli[full]"
 ```
 
 #### Install from source
